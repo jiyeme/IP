@@ -1,0 +1,6 @@
+[23-Aug-2019 16:40:08 PRC] PHP Warning:  file_get_contents(): http:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/jysafecn/public_html/statistics/bin/update-ip.php on line 39
+[23-Aug-2019 16:40:08 PRC] PHP Warning:  file_get_contents(http://update.cz88.net/ip/copywrite.rar): failed to open stream: no suitable wrapper could be found in /home/jysafecn/public_html/statistics/bin/update-ip.php on line 39
+[23-Aug-2019 16:40:11 PRC] PHP Warning:  file_get_contents(): http:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/jysafecn/public_html/statistics/bin/update-ip.php on line 39
+[23-Aug-2019 16:40:11 PRC] PHP Warning:  file_get_contents(http://update.cz88.net/ip/copywrite.rar): failed to open stream: no suitable wrapper could be found in /home/jysafecn/public_html/statistics/bin/update-ip.php on line 39
+[23-Aug-2019 16:40:46 PRC] PHP Warning:  file_get_contents(): http:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/jysafecn/public_html/statistics/bin/update-ip.php on line 39
+[23-Aug-2019 16:40:46 PRC] PHP Warning:  file_get_contents(http://update.cz88.net/ip/copywrite.rar): failed to open stream: no suitable wrapper could be found in /home/jysafecn/public_html/statistics/bin/update-ip.php on line 39
