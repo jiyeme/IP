@@ -1,4 +1,5 @@
 <?php
+
 /**
  * IP 地理位置查询类
  *
@@ -6,6 +7,7 @@
  * @version   2.0
  * @copyright 2005 CoolCode.CN，2012-2017 itbdw.com
  */
+
 namespace itbdw\Ip;
 
 /**
@@ -129,7 +131,7 @@ class IpLocation
     private function init($filepath)
     {
         $filename = __DIR__ . '/qqwry.dat';
-	if ($filepath) {
+        if ($filepath) {
             $filename = $filepath;
         }
 
@@ -241,7 +243,6 @@ class IpLocation
                         }
                     }
                 }
-
             } else {
                 //处理内蒙古不带省份类型的和直辖市
                 foreach ($this->dict_province as $key => $value) {
@@ -269,7 +270,6 @@ class IpLocation
                                 $location['province'] = $value;
                                 $location['org_area'] = $location['org_country'] . $location['org_area'];
                             }
-
                         } else {
                             //省
                             $location['province'] = $value;
@@ -309,7 +309,6 @@ class IpLocation
                         break;
                     }
                 }
-
             }
 
             if ($is_china) {
@@ -320,11 +319,11 @@ class IpLocation
 
             $result['ip'] = $location['ip'];
 
-//            $result['beginip']   = $location['beginip'];
-//            $result['endip']     = $location['endip'];
+            //            $result['beginip']   = $location['beginip'];
+            //            $result['endip']     = $location['endip'];
 
-//            $result['org_country']    = $location['org_country'];  //纯真数据库返回的列1
-//            $result['org_area'] = $location['org_area'];
+            //            $result['org_country']    = $location['org_country'];  //纯真数据库返回的列1
+            //            $result['org_area'] = $location['org_area'];
 
             $result['country'] = $location['country'];
             $result['province'] = $location['province'];

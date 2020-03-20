@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: zhao.binyan
@@ -74,7 +75,7 @@ $online_file = $dir . '/' . 'qqwry.dat';
 if (file_put_contents($tmp_file, $qqwry)) {
     $put_time = microtime(true);
     $put_spend = $put_time - $unzip_time;
-    copy($online_file, $online_file.'.online.bak');
+    copy($online_file, $online_file . '.online.bak');
     copy($tmp_file, $online_file);
 
     $copy_spend = microtime(true) - $put_time;
@@ -83,12 +84,12 @@ if (file_put_contents($tmp_file, $qqwry)) {
     $update_log = "update_log.dat";
     $entries = file($update_log);
     $temp = array();
-    array_push($temp,date("Y-m-d H:i:s"));
-    $entries = implode("",$temp);
-    $fp = fopen($update_log,"w");
-    flock($fp,LOCK_EX);
-    fputs($fp,$entries);
-    flock($fp,LOCK_UN);
+    array_push($temp, date("Y-m-d H:i:s"));
+    $entries = implode("", $temp);
+    $fp = fopen($update_log, "w");
+    flock($fp, LOCK_EX);
+    fputs($fp, $entries);
+    flock($fp, LOCK_UN);
     fclose($fp);
 
     die("更新成功 " . sprintf("下载耗时%s，解压耗时%s，写入耗时%s，复制耗时%s", $download_spend, $unzip_spend, $put_spend, $copy_spend));
@@ -97,18 +98,18 @@ if (file_put_contents($tmp_file, $qqwry)) {
 }
 
 
-function getUrlData($url) {
-	    try{
-    	    $ch = curl_init();
-    	    curl_setopt($ch, CURLOPT_URL, $url);
-    	    curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1");
-    	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); //链接超时时间
-    	    $content = curl_exec($ch);
-    	    curl_close($ch);
-    	    return $content;
-	    }
-	    catch(Exception $error) {
-	        return "";
-	    }
-	}
+function getUrlData($url)
+{
+    try {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/3.0 (compatible; Indy Library)");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); //链接超时时间
+        $content = curl_exec($ch);
+        curl_close($ch);
+        return $content;
+    } catch (Exception $error) {
+        return "";
+    }
+}

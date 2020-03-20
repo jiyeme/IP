@@ -11,3 +11,7 @@ https://www.xhboke.com/858.html
 ## 修复
 2020-03-20  由 祭夜
 更改IP低于获取为从纯真数据库获取
+
+## 食用注意
+IP数据库更新方法：
+执行 bin/update-ip.php 即可
